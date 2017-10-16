@@ -1,3 +1,70 @@
 h1, h2 {color: red;}
 
 a {text-decoration: none;}
+
+.footer.lowest_info_about {
+    position:relative;
+    bottom:100%;
+}
+
+footer {
+    background-color:#efeae1;
+    height:55px;
+    padding:15px
+}
+
+footer a {
+    color:#574c4f
+}
+
+footer a:hover {
+    text-decoration:none
+}
+
+footer span {
+    color:#574c4f
+}
+
+footer .footer-right {
+    float:right
+}
+
+footer .footer-left {
+    float:left;
+    margin:0;
+    padding:0
+}
+
+footer .footer-left li {
+    display:inline-block;
+    list-style-type:none;
+    margin-right:15px
+}
+
+header.top_logo_border{
+    position:relative;
+    right: 50%;
+    top:100%;
+}
+
+form.loginform{
+    position:relative;
+    right:50%;
+    top:50%;
+}
+
+nav ul li{
+    display: inline;
+}
+
+aside ul li{
+    display: inline;
+}
+
+ul li{
+    display: inline;
+}
+
+li{
+    color:red;
+}
