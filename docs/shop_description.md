@@ -2,9 +2,9 @@
 
 Author: belod1
 
-Name:  Kumazushi (Bear sushi)
+Name:  Kuma sushi Bern(Bear sushi)
 
-Address: 	Musterolfingenstrasse 9, 
+Address: 	Musterstrasse 9, 
 			3016 Bern-Wabern
 			Schweiz
 			
