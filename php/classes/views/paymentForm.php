@@ -29,21 +29,6 @@
     </form>
 
 
-<form action="update_db_2.php" method="post">
-	<h3>Please update your personal data</h3>
-	<p><label>First Name: </label>
-		<input name="address[fname]" value="John"/></p>
-	<p><label>Last Name: </label>
-		<input name="address[lname]" value="Smith"/></p>
-	/* .. */
-	<input type="hidden" name="address[id]" value="23" />
-	<p>
-		<input type="submit" name="action" value="Update" />
-		<input type="submit" name="action" value="Delete" />
-	</p>
-</form>
-
-
   </body>
 
 </html>
