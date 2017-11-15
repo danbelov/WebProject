@@ -15,51 +15,80 @@
         //array containing the error messages
         $errors = array();
 
-       if(count($_POST)>0){ //validate form
+        if(count($_POST)>0){
+          if(isset($_POST['paymentInfo'])){
+          $paymentInfoPost = $_POST['paymentInfo'];
+          }
+        }
+
+         //validate form
          //validate payment method
-         if(!isset($_POST['paymentmethod']) || $_POST['paymentmethod'] ==''){
+         if(!isset($paymentInfoPost['paymentmethod']) || $paymentInfoPost['paymentmethod'] ==''){
            $errors['paymentmethod'] = "Please chose a payment method.";
+           $method = "";
          } else {
-           $method = $_POST['paymentmethod'];
+           $method = $paymentInfoPost['paymentmethod'];
          }
          //validate name
-         if(!isset($_POST['cardholder']) || $_POST['cardholder'] ==''){
+         if(!isset($paymentInfoPost['cardholder']) || $paymentInfoPost['cardholder'] ==''){
            $errors['cardholder'] = "Please enter your name.";
+           $name="";
          } else {
-           $name = $_POST['cardholder'];
+           $name = $paymentInfoPost['cardholder'];
          }
          //validate card number
-         if(!isset($_POST['cardnumber']) || $_POST['cardnumber'] ==''){
+         if(!isset($paymentInfoPost['cardnumber']) || $paymentInfoPost['cardnumber'] ==''){
            $errors['cardnumber'] = "Please enter your card number.";
+           $crdNmbr="";
          } else {
-           $crdNmbr = $_POST['cardnumber'];
+           $crdNmbr = $paymentInfoPost['cardnumber'];
          }
          //validate date
-         if(!isset($_POST['expirydate']) || $_POST['expirydate'] ==''){
+         if(!isset($paymentInfoPost['expirydate']) || $paymentInfoPost['expirydate'] ==''){
            $errors['expirydate'] = "Please enter the expiry date of your card.";
+           $date="";
          } else {
-           $date = $_POST['expirydate'];
+           $date = $paymentInfoPost['expirydate'];
          }
          //validate cvc
-         if(!isset($_POST['cvc']) || $_POST['cvc'] ==''){
+         if(!isset($paymentInfoPost['cvc']) || $paymentInfoPost['cvc'] ==''){
            $errors['cvc'] = "Please enter the cvc of your card.";
+           $cvc="";
          } else {
-           $cvc = $_POST['cvc'];
+           $cvc = $paymentInfoPost['cvc'];
          }
          //validate the checkbox
-         if(!isset($_POST['remembercheckbox']) || $_POST['remembercheckbox'] ==''){
+         if(!isset($paymentInfoPost['remembercheckbox']) || $paymentInfoPost['remembercheckbox'] ==''){
            $check = "false";
          } else {
            $check = "true";
          }
+//end of form validation
 
-       }//end of form validation
-
-       if(count($_POST) > 0 && count($errors) == 0){
+       if(count($paymentInfoPost) > 0 && count($errors) == 0){
          //all fields are validation --> return an confirmation message
          echo "<p>Thank you $name!\nYour payment with $method has been confirmed.</p>";
-       } else {
+       } else {?>
 
+         <form action="confirmedPayment.php" method="post">
+
+           <p><label>Select a payment method:</label>
+             <select name="paymentInfo[paymentmethod]">
+               <option value="Visa">Visa</option>
+               <option value="MasterCard">MasterCard</option>
+               <option value="American Express">American Express</option>
+               <option value="PayPal">PayPal</option>
+             </select>
+           </p>
+
+           <p>Card-Nr.           <input type="text" tabindex="2" name="paymentInfo[cardnumber]" ></p>
+           <p>Card Holder Name   <input type="text" tabindex="3" name="paymentInfo[cardholder]"></p>
+           <p>Card Expiry Date   <input type="month" tabindex="4" name="paymentInfo[expirydate]"></p>
+           <p>CVC                <input type="text" tabindex="5" name="paymentInfo[cvc]"></p>
+           <p>Remember this Card <input type="checkbox" tabindex="6" name="paymentInfo[remembercheckbox]" value="true"></p>
+           <input type="submit" value="Submit">
+         </form>
+         <?php
        }
 
         echo"<p>For debugging all values are listed here:</p>
