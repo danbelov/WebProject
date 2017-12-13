@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Site login</title>
-    <link rel = "stylesheet" type = "text/css" href = "../../../css/styles.css" media = "screen">
-    <link rel = "stylesheet" type = "text/css"  href = "../../../css/styles_print.css" media = "print">
+    <link rel = "stylesheet" type = "text/css" href = "../../../assets/css/styles.css" media = "screen">
+    <link rel = "stylesheet" type = "text/css" href = "../../../assets/css/styles_print.css" media = "print">
 </head>
 <body>
     <form class="loginform" action="php/classessses/views/login.php">

@@ -37,7 +37,7 @@ Categories:
 			Roasted - 2.00 
 			Katsuobushi(Bonito slim slices) - 4.00
 			Colored ginger - 2.00
-			Tobiko - 2.50
+			Tobikko - 2.50
 			Wakame - 3.50
 			Wasabi - 1.20
 			Thermal packaging - 3.00
