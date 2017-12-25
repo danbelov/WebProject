@@ -1,0 +1,15 @@
+{
+  "name": "belod1/webshop",
+  "description": "description_text",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Daniil Belov and Janek Bobst",
+      "email": "belod1@bfh.ch"
+    }
+  ],
+  "require": {
+    "phpmailer/phpmailer": "v6.0.2"
+  }
+}

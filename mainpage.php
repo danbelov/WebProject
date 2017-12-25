@@ -76,7 +76,7 @@ function print_mainpage_navigation_list(){
     $main_navigation_links = array(
         "menu.php",
         "deliveryInfo.php",
-        "index.php?services=about",
+        "aboutUs.php",
         "contactForm.php",
         "paymentForm.php",
         "login.php"
