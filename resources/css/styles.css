@@ -1,0 +1,200 @@
+/*
+html, body{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}*/
+
+html {
+    position: relative;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+body {
+    margin: 0 0 0px; /* bottom = footer height */
+    padding: 25px;
+}
+
+.header, .navigation {
+    width: 100%;
+    float:left;
+    height: 80px;
+}
+.sidebar {
+    width: 200px;
+    float:left;
+    min-height: 500px;
+}
+.content {
+    width: 760px;
+    float: left;
+    min-height: 500px;
+}
+
+li img{
+    height: 20%;
+    width:20%;
+}
+
+/**
+ * centering with absolute position
+ */
+
+div.main_container {
+
+}
+
+div.central_container {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    margin: auto;
+}
+
+header.top_logo_border {
+    position: absolute;
+    background-color: black;
+    top:0;
+    width : 100%
+}
+
+header .footer-left li {
+    display:inline-block;
+    list-style-type:none;
+    margin-right:15px
+}
+
+header {
+    background: url(../img/mainimage.jpg) no-repeat;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height:170px;
+}
+
+header ul.ga_menu{
+    display: flex;
+    justify-content:space-between;
+    align-items: flex-start;
+    padding: 10px 10px 0 0px;
+}
+
+header ul.ga_menu li{
+    list-style: none;
+    font-family: "Segoe UI";
+    background-color: rgb(231, 231, 231);
+    -moz-border-radius: 5px;
+    -webkit-border-radius:  5px;
+    border-radius: 5px;
+}
+
+header ul.ga_menu li a {
+    text-decoration: none;
+    padding: 5px 10px;
+    color: rgb(48, 48, 48);
+    text-transform: uppercase;
+    font-size: 20px;
+    display: block;
+    position: relative;
+    z-index: 2;
+}
+
+header ul.language_menu{
+    display: flex;
+    justify-content:space-between;
+    align-items: flex-start;
+    padding: 15px 20px 0 0px;
+}
+
+header ul.language_menu li{
+    list-style: none;
+    font-family: "Segoe UI";
+    background-color: rgb(231, 231, 231);
+    -moz-border-radius: 10px;
+    -webkit-border-radius:  10px;
+    border-radius: 10px;
+}
+
+header ul.language_menu li a {
+    font-family: "Segoe UI";
+    text-decoration: none;
+    padding: 10px 20px;
+    color: rgb(48, 48, 48);
+    text-transform: uppercase;
+    font-size: 20px;
+    display: block;
+    position: relative;
+    z-index: 2;
+}
+
+nav.vertical-menu {
+    width: 200px;
+}
+
+nav.vertical-menu ul li{
+    padding: 30px;
+    display: inline;
+}
+
+nav.vertical-menu a {
+    background-color: #eee; /* Grey background color */
+    color: white; /* Black text color */
+    display: block; /* Make the links appear below each other */
+    padding: 12px; /* Add some padding */
+    text-decoration: none; /* Remove underline from links */
+}
+
+nav.vertical-menu a:hover {
+    background-color: #ccc; /* Dark grey background on mouse-over */
+}
+
+nav.vertical-menu a.active {
+    background-color: chartreuse; /* Add a green color to the "active/current" link */
+    color: white;
+}
+
+footer {
+    background-color: black;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    overflow:hidden;
+}
+
+footer ul.lowest_info_about{
+    display: flex;
+    justify-content:space-between;
+    align-items: flex-start;
+    padding: 10px 10px 10px 10px;
+}
+
+footer ul.lowest_info_about li{
+    list-style: none;
+    font-family: "Segoe UI";
+    -moz-border-radius: 5px;
+    -webkit-border-radius:  5px;
+    border-radius: 5px;
+}
+
+footer ul.lowest_info_about li p {
+    text-decoration: none;
+    padding: 5px 10px;
+    font-family: "Segoe UI"; color:white; font-size: 15px;
+    display: block;
+    position: relative;
+    z-index: 2;
+}
