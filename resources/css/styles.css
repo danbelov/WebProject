@@ -12,7 +12,7 @@ html {
     position: relative;
     min-height: 100%;
     overflow-x: hidden;
-    overflow-y: hidden;
+   /* overflow-y: hidden; */
 }
 
 body {
@@ -62,6 +62,15 @@ div.central_container {
 
     margin: auto;
 }
+
+.carouselcontainer
+{
+    width: 1200px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+
 
 header.top_logo_border {
     position: absolute;
@@ -138,6 +147,8 @@ header ul.language_menu li a {
     position: relative;
     z-index: 2;
 }
+
+
 
 article {
     width: 500px;

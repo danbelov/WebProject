@@ -1,9 +1,13 @@
+
 <?php
 
-require_once 'vendor/autoload.php';
+use PHPMailer\PHPMailer\PHPMailer;
+
+require_once("vendor/autoload.php");
 
 function email($email){
-    require_once("Autoloader.php");
+
+    require_once("vendor/autoload.php");
     $mail = new PHPMailer();
     $mail->isSMTP();
     $mail->Host = 'smtp.gmail.com';
@@ -22,4 +26,5 @@ function email($email){
     $mail->AltBody ="This is a test mail";
     $mail->Send();
 }
+
  ?>

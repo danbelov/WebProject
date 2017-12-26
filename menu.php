@@ -25,9 +25,25 @@
 
         $db = DB::getInstance();
 
+    echo '<article>';
+    echo '<h1>Our menu:</h1> ';
+    echo '<table>';
+    echo "<tr>";
+    echo "<td>Name</td>";
+    echo "<td>Quantity in a set</td>";
+    echo "<td>Category</td>";
+    echo "<td>Price</td>";
+    echo "</tr>";
     foreach($db->query($sql) as $row){
-        echo "<li>{$row['name']}</li>";
+        echo "<tr>";
+        echo "<td>{$row['name']}</td>";
+        echo "<td>{$row['qtyInASet']}</td>";
+        echo "<td>{$row['category']}</td>";
+        echo "<td>{$row['price']} CHF</td>";
+        echo "</tr>";
     }
+    echo '</table>';
+    echo '</article>';
 
     ?>
 </body>

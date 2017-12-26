@@ -79,7 +79,7 @@ function print_mainpage_navigation_list(){
         "aboutUs.php",
         "contactForm.php",
         "paymentForm.php",
-        "login.php"
+        "adminConsole.php"
     );
 
     $i = 0;
@@ -122,8 +122,8 @@ function print_products_list(){
         "index.php?products=sushi",
         "index.php?products=ramen",
         "index.php?products=okonomiyaki",
-        "index.php?products=sauces",
-        "index.php?products=extras",
+        "index.php?products=sauce",
+        "index.php?products=extra",
     );
 
     echo '<nav class="vertical-menu">';

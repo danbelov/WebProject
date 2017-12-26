@@ -48,8 +48,23 @@ class DB extends PDO {
         return self::$instance;
     }
 
+    /**
+     * @param string $query
+     * @return PDOStatement
+     */
     public function query($query)
     {
+        $result = parent::query($query);
+        return($result);
+    }
+
+    /**
+     * @param $selection_condition
+     * @return PDOStatement
+     */
+    public function queryProductsByType($selection_condition)
+    {
+        $query = "SELECT * FROM products WHERE `category` LIKE UPPER(%'$selection_condition')" ;
         $result = parent::query($query);
         return($result);
     }

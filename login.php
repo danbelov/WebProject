@@ -11,11 +11,8 @@
         require_once 'mainpage.php';
         require_once 'php/Autoloader.php';
     ?>
+    <article>
     <form class="loginform" action="php/classessses/views/login.php">
-        <div class="imgcontainer">
-            <img src="img_avatar2.png" alt="Avatar" class="avatar">
-        </div>
-
         <input class="container">
             <label><b>Username</b></label>
             <input type="text" placeholder="Enter Username" name="uname" required>
@@ -32,5 +29,6 @@
             <span class="psw">Forgot <a href="#">password?</a></span>
         </div>
     </form>
+    </article>
 </body>
 </html>
