@@ -3,12 +3,11 @@
 <head>
     <charset=UTF-8>
     <title>Payment</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css"/>
-    <link rel="stylesheet" type="text/css" href="css/styles.css" media="print"/>
+    <link rel="stylesheet" type="text/css" href="resources/css/styles.css"/>
 </head>
 
 <body>
-<h1>Delivery information</h1>
+
 <?php
 
 require_once 'mainpage.php';
@@ -17,13 +16,12 @@ require_once 'php/Autoloader.php';
 //array containing the error messages
 $errors = array();
 echo '<article>';
-echo '<h2>Our tasty dishes can be easily enjoyed at home: </h2>';
-echo '<h2>If you are: </h2>';
-echo '<h3>Within Bern City - free of charge</h3>';
-echo '<h3>Within Canton of Bern: in this case we must charge you with a 10 SFr Delivery fee. The food will be delivered within 2 hours. </h3>';
-echo '<h3>Within other Swiss territories: we are sorry, but it is physically impossible to deliver food fresh in that case so you cannot order the delivery.'.
-        'We would be glad to see in our restaurant ;) </h3>';
-echo '<h4>Just choose the appropriate delivery type when checking out your order </h4>';
+echo '<h1>Delivery information</h1>';
+echo '<h2>'.translate('delivery','0').'</h2>';
+echo '<h2>'.translate('delivery','1').'</h2>';
+echo '<h3>'.translate('delivery','2').'</h3>';
+echo '<h3>'.translate('delivery','3').'</h3>';
+echo '<h3>'.translate('delivery','4').'</h3>';
 echo '</article>';
 ?>
 </body>

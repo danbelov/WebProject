@@ -4,7 +4,6 @@
     <charset=UTF-8>
     <title>Payment</title>
     <link rel="stylesheet" type="text/css" href="resources/css/styles.css"/>
-    <link rel="stylesheet" type="text/css" href="resources/css/styles_print.css" media="print"/>
   </head>
 
   <body>
@@ -15,7 +14,7 @@
     <article>
 
 
-        <form method="post">
+        <form action="" method="post">
             <h1>New User:</h1>
             <p>First name<input type="text" tabindex="2" name="firstName"></p>
             <p>Last name type="text" tabindex="2" name="lastName"></p>

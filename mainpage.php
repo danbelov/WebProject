@@ -1,11 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: RSQLAPTOP
- * Date: 15/10/2017
- * Time: 22:36
- */
 
+require_once('translations.php');
 
 function load_images($productType)
 {
@@ -31,10 +26,9 @@ function loadImages()
         }
     }
 }
-
+/*
 function load_header()
 {
-
     echo '<header class="top_logo_border">' .
         '<ul class="ga_menu">';
             print_mainpage_navigation_list();
@@ -44,17 +38,63 @@ function load_header()
         echo '</ul>' ;
      echo  '</header>';
 }
+*/
+
+function load_header()
+{
+    echo '<header>';
+    echo '<div class="top_logo_border">
+    <div class="language_menu"><ul>';
+    print_languages_list();
+    echo '</ul></div>'.
+         '</div>'.
+         '<div class="ga_menu"><ul>';
+    print_mainpage_navigation_list();
+    echo '</ul></div>' ;
+
+    echo '</header>';
+}
 
 function print_languages_list(){
 
     $languages_list = array(
-        "DE",
-        "FR"
+        "EN",
+        "DE"
     );
 
+    $j = 0;
     foreach ($languages_list as $languages){
-        echo "<li>$languages</li>";
+        echo '<li><a href='.$_SERVER['PHP_SELF'].'?lang='.strtolower($languages_list[$j]).' onclick="">'.$languages.'</a></li>';
+        $j=$j+1;
     }
+}
+
+function navigate_to_page($page_id){
+    $page_result = "0";
+    switch($page_id){
+        case 0 :
+            $page_result = "index.php";
+            break;
+        case 1 :
+            $page_result = "menu.php";
+            break;
+        case 2 :
+            $page_result = "deliveryInfo.php";
+            break;
+        case 3 :
+            $page_result = "aboutUs.php";
+            break;
+        case 4 :
+            $page_result = "contactForm.php";
+            break;
+        case 5 :
+            $page_result = "paymentForm.php";
+            break;
+        case 6 :
+            $page_result = "adminConsole.php";
+            break;
+    }
+    return $page_result;
 }
 
 /**
@@ -64,22 +104,36 @@ function print_mainpage_navigation_list(){
 
     $page1 = 'aaa';
 
+    $lang = NULL;
+    if (!isset($_GET['lang'])) {
+        $lang = 'de';
+    } else {
+        $lang = $_GET['lang'];
+        setcookie('lang', $lang, time() + 1800);
+    }
+
+    $userName = translate('menu',  5);
+    if(isset($_COOKIE['usrName'])){
+        $userName = $_COOKIE['usrName'];
+    }
+
     $main_navigation = array(
-        "Menu",
-        "Delivery",
-        "About",
-        "Contact",
-        "My Cart",
-        "Login"
+        translate('menu',  0),
+        translate('menu',  1),
+        translate('menu',  2),
+        translate('menu',  3),
+        translate('menu',  4),
+        $userName
     );
 
-    $main_navigation_links = array(
+    $main_navigation_links =
+        array(
         "menu.php",
         "deliveryInfo.php",
         "aboutUs.php",
         "contactForm.php",
-        "paymentForm.php",
-        "adminConsole.php"
+        checkLogin(),
+        "login.php"
     );
 
     $i = 0;
@@ -99,18 +153,26 @@ function print_mainpage_navigation_list(){
     }
 }
 
+function checkLogin(){
+    if(isset($_COOKIE['usrName']) && isset($_COOKIE['usrID'])){
+        return "paymentForm.php";
+    } else {
+        return "credentialsForm.php";
+    }
+}
+
 /**
  *
  */
 function print_products_list(){
 
-   // $page = $_GET['products'];
-
-    $page = '123';
+    if (isset($_GET['products'])) {
+        $page = $_GET['products'];
+    } else $page = "";
 
     $products_list = array(
         "Umaizushi",
-        "Sushi",
+        "Rolls",
         "Ramen",
         "Okonomiyaki",
         "Sauces",
@@ -118,15 +180,15 @@ function print_products_list(){
     );
 
     $products_links = array(
-        "index.php?products=umaizushi",
-        "index.php?products=sushi",
-        "index.php?products=ramen",
-        "index.php?products=okonomiyaki",
-        "index.php?products=sauce",
-        "index.php?products=extra",
+        "menu.php?products=simplesushi",
+        "menu.php?products=sushirolls",
+        "menu.php?products=ramen",
+        "menu.php?products=okonomiyaki",
+        "menu.php?products=sauce",
+        "menu.php?products=extra",
     );
 
-    echo '<nav class="vertical-menu">';
+    echo '<nav><ul>'; // class="vertical-menu" removed !
 
     $i = 0;
 
@@ -140,17 +202,17 @@ function print_products_list(){
             $isActive = "";
         }
 
-        echo "<a class='$isActive' href='$products_links[$i]'>$products</a>";
+        echo "<li><a class='$isActive' href='$products_links[$i]'>$products</a></li>";
         $i = $i + 1;
 
     }
-    echo '</div>';
+    echo '</ul></nav>';
 }
 
 function print_footer()
 {
     echo '<footer>' .
-        '<ul class="lowest_info_about">' .
+        '<ul>' .
         '<li><p>Kuma sushi GmbH</p></li>' .
         '<li><p>Musterstrasse 9, 3016 Bern</p> </li>' .
         '<li><p>MWST CHE 123.490.789</p> </li>'.
@@ -158,6 +220,7 @@ function print_footer()
     echo  '</ul>' .
         '</footer>';
 }
+
 load_header();
 print_products_list();
 loadImages();

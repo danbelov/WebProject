@@ -3,8 +3,7 @@
 <head>
     <charset=UTF-8>
     <title>Payment</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css"/>
-    <link rel="stylesheet" type="text/css" href="css/styles.css" media="print"/>
+    <link rel="stylesheet" type="text/css" href="resources/css/styles.css"/>
 </head>
 <body>
 <?php
@@ -31,25 +30,25 @@ require_once 'mainpage.php';
             $mail->Subject= "Order Confirmation";
             $mail->Body = "<h1>We have recieved your order and are processing it now!</h1>";
             $mail->AltBody ="This is a test mail";
-            $mail->Send();
+            try {
+                $mail->Send();
+            } catch (\PHPMailer\PHPMailer\Exception $e) {
+            }
+
         }
 
-    echo '<article>';
-    echo '<h1>Contact us</h1>';
-    echo '<form action="confirmedPayment.php" method="post">';
-
-    echo    '<p><label>Your name:</label><input type="text" tabindex="2" name="cardnumber" required></p>'.
-        '</form>';
-
-    echo    '<p><label>Your email:</label><input type="text" tabindex="2" name="cardnumber" required></p>'.
-    '</form>';
-
-    echo    '<p><label>Your message:</label>'.
-        '<textarea id="tAddress" rows="4" cols="100" maxlength="500" placeholder="Enter your message" required></textarea>'.
-        '<input type="submit" value="Submit">'.
-        '<button value="Send question">'.
-        '</form>';
-    echo '</article>';
+    echo '<article>
+            <h1>Contact us</h1>
+            <form action="confirmedPayment.php" method="post">
+                <fieldset>
+                    <p><label class="field">Your name:</label><input type="text" tabindex="2" name="cardnumber" required></p>
+                    <p><label class="field">Your email:</label><input type="text" tabindex="2" name="cardnumber" required></p>
+                    <p><label class="field">Your message:</label>
+                    <textarea id="tAddress" rows="4" cols="100" maxlength="500" placeholder="Enter your message" required></textarea>
+                    <p><input class="submit" type="submit" value="Submit"></p>
+                </fieldset>
+            </form>
+           </article>';
         ?>
 </body>
 </html>

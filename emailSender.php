@@ -24,7 +24,11 @@ function email($email){
     $mail->Subject= "Order Confirmation";
     $mail->Body = "<h1>We have recieved your order and are processing it now!</h1>";
     $mail->AltBody ="This is a test mail";
-    $mail->Send();
+    try {
+        $mail->Send();
+    } catch (\PHPMailer\PHPMailer\Exception $e) {
+        echo 'Could not send your email';
+    }
 }
 
  ?>

@@ -33,8 +33,9 @@ CREATE TABLE IF NOT EXISTS orders(
 CREATE TABLE IF NOT EXISTS users(
   ID INT(10) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   language VARCHAR(3),
-  firstName VARCHAR(50),
-  lastName VARCHAR(50),
+  name VARCHAR(50),
+  email VARCHAR(50),
+  password VARCHAR(50),
   address VARCHAR(50),
   registrationDate DATETIME
 ) ENGINE = InnoDB;
@@ -67,8 +68,8 @@ INSERT INTO `products` (`name`,`qtyInASet`,`category`, `descriptionKey`, `price`
   ('Kani','10','SIMPLESUSHI','simple_kani_10','9.00'),
   ('Kani','18','SIMPLESUSHI','simple_kani_18','16.00'),
   ('California','6','SUSHIROLLS','california_6','13.50'),
-  ('California','10','SUSHIROLLS','california_6','20.00'),
-  ('California','18','SUSHIROLLS','california_6','28.00'),
+  ('California','10','SUSHIROLLS','california_10','20.00'),
+  ('California','18','SUSHIROLLS','california_18','28.00'),
   ('Philadelphia','6','SUSHIROLLS','philadelphia_6','8.50'),
   ('Philadelphia','10','SUSHIROLLS','philadelphia_10','11.00'),
   ('Philadelphia','18','SUSHIROLLS','philadelphia_18','19.00'),
