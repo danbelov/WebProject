@@ -383,10 +383,27 @@ fieldset p {
     padding: 5px;
 }
 
+fieldset a{
+    margin-left: 165px;
+}
+
 legend{
     font-family: "Segoe UI";
     font-size: 20px;
     font-weight: bold;
     color: black;
     padding-bottom: 10px;
+}
+
+a.linkButton{
+    font-size: 16px;
+    background-color: rgb(100, 100, 100); /* Grey background color */
+    border-radius: 5px;
+    color: white; /* Black text color */
+    padding: 5px; /* Add some padding */
+    text-decoration: none; /* Remove underline from links */
+}
+
+a.linkButton:hover{
+    background-color: rgb(216, 34, 45);
 }

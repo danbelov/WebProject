@@ -7,25 +7,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $("#logoutBtn").click(function(){
-                var xmlhttp = getXmlHttp();
-                var xmlhttp = new XMLHttpRequest();
-                xmlhttp.open('GET','destroy_session.php', true);
-                xmlhttp.onreadystatechange=function(){
-                    if (xmlhttp.readyState == 4){
-                        if(xmlhttp.status == 200){
-                            alert(xmlhttp.responseText);
-                        }
-                    }
-                };
-                xmlhttp.send(null);
-            });
-        });
 
-
-    </script>
 </head>
 <body>
     <?php
@@ -47,17 +29,17 @@
             if ($stmt->rowCount() > 0) {
                 setcookie('usrID', $row['ID'], time() + 1800);
                 setcookie('usrName', $row['name'], time() + 1800);
-                echo '<article>Welcome ' . $row['name'] . '</article>';
+                loadLoggedInView();
             } else {
                 echo '
             <article class="form">
                 <h1>Login</h1>
                 <form name="registration" action="" method="post">
                     <fieldset>
-                        <input type="text" name="email" placeholder="Email" required />
-                        <input type="password" name="password" placeholder="Password" required />
-                        <input type="submit" name="submit" value="Login" />
-                        
+                        <legend>Login</legend>
+                        <p><label class="field">Email:</label><input type="text" name="email" placeholder="Email" required /></p>
+                        <p><label class="field">Password:</label><input type="password" name="password" placeholder="Password" required /></p>
+                        <p><input type="submit" name="submit" value="Login" class="submit"/></p>
                     </fieldset>
                 </form>
             </article>\
@@ -67,8 +49,17 @@
             echo include('loginForm.php');
         }
     } else {
-        echo '<article><h1>Welcome ' . $_COOKIE['usrName'] . '</h1>';
-        echo '<input type="button" id="logoutBtn" value="Logout"></article>';
+        loadLoggedInView();
+        echo '</article>';
+    }
+    
+    function loadLoggedInView(){
+        echo '
+                <article>
+                <h1>Welcome ' . $_COOKIE['usrName'] . '</h1>
+                <a href="logout.php" class="linkButton" >Logout</a>
+                </article>
+                ';
     }
     ?>
 
