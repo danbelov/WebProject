@@ -1,0 +1,392 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,time, mark, audio, video {  margin: 0;  padding: 0;  border: 0;  font-size: 100%;  font: inherit;  vertical-align: baseline; }
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {  display: block;  }  body {  line-height: 1;  }  ol, ul {  list-style: none;  }  blockquote, q {  quotes: none;  }  blockquote:before, blockquote:after, q:before, q:after {  content: '';  content: none;  }  table {  border-collapse: collapse; border-spacing: 0;}
+
+/********************************************************************************************************
+start of actual css
+*********************************************************************************************************/
+
+/*
+html, body{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}*/
+
+h1{
+    font-family: "Segoe UI";
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+    padding-bottom: 10px;
+}
+
+h2{
+    font-family: "Segoe UI";
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    padding-bottom: 10px;
+}
+
+h3 {
+    font-family: "Segoe UI";
+    font-size: 18px;
+    color: black;
+    padding-bottom: 10px;
+}
+
+p {
+   font-size: 15px;
+}
+
+html {
+    margin:0;
+    position: relative;
+    min-height: 100%;
+    /* overflow-x: hidden; */
+   /* overflow-y: hidden; */
+}
+
+body {
+    margin: 0 0 0px; /* bottom = footer height */
+    padding: 25px;
+}
+
+.header, .navigation {
+    width: 100%;
+    float:left;
+    height: 80px;
+}
+.sidebar {
+    width: 200px;
+    float:left;
+    min-height: 500px;
+}
+.content {
+    width: 760px;
+    float: left;
+    min-height: 500px;
+}
+
+li img{
+    height: 20%;
+    width:20%;
+}
+
+/**
+ * centering with absolute position
+ */
+
+div .main_container {
+
+}
+
+div .central_container {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    margin: auto;
+}
+
+.modal{
+    display: none;
+}
+
+.carouselcontainer
+{
+    position: relative;
+    width: 1200px;
+    margin-top: 10px;
+    margin-left:auto;
+    margin-bottom: 110px;
+    z-index: -1;
+}
+
+.infobutton {
+    font: bold 11px Arial;
+    text-decoration: none;
+    background-color: deepskyblue;
+    color: #333333;
+    padding: 2px 6px 2px 6px;
+    border-top: 1px solid #CCCCCC;
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #CCCCCC;
+}
+
+.addtocartbutton {
+    font: bold 11px Arial;
+    text-decoration: none;
+    background-color: chartreuse;
+    color: #333333;
+    padding: 2px 6px 2px 6px;
+    border-top: 1px solid #CCCCCC;
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #CCCCCC;
+}
+
+.active {
+    background-color: red;
+}
+
+
+header {
+    clear: both;
+    background-color: white;
+    left:0;
+    top:0;
+    width : 100%;
+    align-items: stretch;
+}
+
+header .top_logo_border {
+    background: url(../img/mainimage.jpg) no-repeat;
+    background-color: black;
+    position: relative;
+    height:170px;
+
+}
+
+header .footer-left li {
+    display:inline-block;
+    list-style-type:none;
+    margin-right:15px
+}
+
+header .ga_menu ul{
+    margin:0;
+    display: flex;
+    justify-content:space-around;
+    align-items: flex-start;
+    padding: 10px 0px 10px 0px;
+    background: black;
+}
+
+header .ga_menu ul li{
+    float: left;
+    list-style: none;
+    font-family: "Segoe UI";
+    font-size: 20px;
+    padding: 5px;
+    background-color: rgb(100, 100, 100);
+    -moz-border-radius: 5px;
+    -webkit-border-radius:  5px;
+    border-radius: 5px;
+}
+
+header .ga_menu ul li:hover{
+    background-color: rgb(216, 34, 45);
+}
+
+header .ga_menu ul li a {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+}
+
+header .language_menu ul{
+    display: flex;
+    justify-content:flex-end;
+    align-items: flex-start;
+    padding: 15px 20px 0px 0px;
+}
+
+header .language_menu ul li{
+    list-style: none;
+    text-align: center;
+    font-family: "Segoe UI";
+    margin: 5px;
+    background-color: rgb(100, 100, 100);
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    width: 25px;
+    padding: 3px 0px 3px 0px;
+}
+
+header .language_menu ul li a {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+}
+
+header .language_menu ul li:hover {
+    background-color: rgb(216, 34, 45);
+}
+
+article {
+    float: left;
+    font-family: "Segoe UI";
+    height: 100%;
+    width: 800px;
+    margin-left: auto;
+    margin-top: 10px;
+    margin-bottom: 110px;
+    z-index: -1;
+}
+
+.alert{
+    color: red;
+    font-weight: bold;
+}
+
+nav {
+    float:left;
+    font-size: 0;
+    width: 200px;
+    margin-right: 10px;
+    margin-top: 10px;
+
+    position: sticky;
+    position: -webkit-sticky;
+    top: 10px;
+}
+
+nav ul {
+    padding: 0;
+}
+
+nav ul li{
+    font-family: "Segoe UI";
+    list-style: none;
+}
+
+nav ul li a {
+    font-size: 16px;
+    background-color: rgb(100, 100, 100); /* Grey background color */
+    color: white; /* Black text color */
+    display: block; /* Make the links appear below each other */
+    padding: 12px; /* Add some padding */
+    text-decoration: none; /* Remove underline from links */
+}
+
+nav ul li a:hover {
+    background-color: rgb(216, 34, 45); /* Red background on mouse-over */
+}
+
+nav ul li a.active {
+    background-color: rgb(216, 34, 45); /* Add a red color to the "active/current" link */
+}
+
+nav .active {
+    background-color: crimson;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+footer {
+    background-color: black;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100px;
+    width: 100%;
+    overflow:hidden;
+}
+
+footer ul{
+    display: flex;
+    justify-content:space-between;
+    align-items: flex-start;
+    padding: 10px 10px 10px 10px;
+}
+
+footer ul li{
+    list-style: none;
+    font-family: "Segoe UI", serif;
+    -moz-border-radius: 5px;
+    -webkit-border-radius:  5px;
+    border-radius: 5px;
+}
+
+footer ul li p {
+    text-decoration: none;
+    padding: 5px 10px;
+    font-family: "Segoe UI", serif;
+    color: white;
+    font-size: 15px;
+    display: block;
+    position: relative;
+    z-index: 2;
+}
+
+form{
+
+
+}
+
+label.field {
+    width: 150px;
+    text-align: right;
+    float: left;
+}
+
+label.submit {
+    width: 100px;
+    text-align: right;
+    float: left;
+    display: none;
+}
+
+textarea{
+    margin-left: 15px;
+    width: 300px;
+    height: 200px;
+    float: left;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+input {
+    margin-left: 15px;
+    width: 300px;
+    float: left;
+}
+
+input.submit{
+    width: auto;
+    margin-left: 165px;
+}
+
+select {
+    margin-left: 15px;
+    float: left;
+}
+
+fieldset p {
+    clear: both;
+    padding: 5px;
+}
+
+legend{
+    font-family: "Segoe UI";
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    padding-bottom: 10px;
+}
